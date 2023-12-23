@@ -13,7 +13,6 @@ terraform {
 }
 
 provider "azurerm" {
-  # Configuration options
   features {
   }
   tenant_id       = "<tenant_id>"

@@ -1,5 +1,5 @@
-This Module is to create a Manages Kubernetes Cluster with one node.
-All the required variables are passed with default values
+This Module is to create a Manages Kubernetes Cluster.
+All the required variables are passed with default values.
 
 <Usage>
 

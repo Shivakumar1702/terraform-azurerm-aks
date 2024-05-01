@@ -42,7 +42,14 @@ variable "upgrade_type" {
 
 variable "vm_size" {
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_DS2_v2"
+  description = "The size of the Virtual Machine, such as Standard_DS2_v2"
+
+}
+
+variable "default_vm_size" {
+  type        = string
+  default     = "Standard_DS2_v2"
   description = "The size of the Virtual Machine, such as Standard_DS2_v2"
 
 }
@@ -54,17 +61,30 @@ variable "enable_auto_scaling" {
 
 }
 
+variable "default_node_pool_name" {
+  type    = string
+  default = "The name which should be used for the Kubernetes Default/Master Node Pool."
+
+}
+
+variable "default_node_count" {
+  type        = number
+  default     = 1
+  description = "Number of VMs in the default node pool."
+
+}
+
 variable "node_pool_name" {
   type        = string
-  default     = "nodepool"
-  description = "The name which should be used for the default Kubernetes Node Pool."
+  default     = "usernodepool"
+  description = "The name which should be used for the Kubernetes User Node Pool."
 
 }
 
 variable "node_count" {
   type        = number
   default     = 1
-  description = "Number of VMs in the default node pool."
+  description = "Number of VMs in the user node pool."
 
 }
 

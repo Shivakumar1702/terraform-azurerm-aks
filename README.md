@@ -6,8 +6,8 @@ All the required variables are passed with default values
 terraform {
   required_providers {
     azurerm = {
-      source  = "hashicorp/azurerm"
-      version = ">=3.85.0"
+      source = "hashicorp/azurerm"
+      version = "3.101.0"
     }
   }
 }

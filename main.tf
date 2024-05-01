@@ -14,9 +14,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
   automatic_channel_upgrade = var.upgrade_type
 
   default_node_pool {
-    name                = var.node_pool_name
-    node_count          = var.node_count
-    vm_size             = var.vm_size
+    name                = var.default_node_pool_name
+    node_count          = var.default_node_count
+    vm_size             = var.default_vm_size
     enable_auto_scaling = var.enable_auto_scaling
 
   }
@@ -34,4 +34,15 @@ resource "azurerm_kubernetes_cluster" "aks" {
     Environment = var.tag
   }
 
+}
+
+resource "azurerm_kubernetes_cluster_node_pool" "example" {
+  name                  = var.node_pool_name
+  kubernetes_cluster_id = azurerm_kubernetes_cluster.aks.id
+  vm_size               = var.vm_size
+  node_count            = var.node_count
+
+  tags = {
+    Environment = "Production"
+  }
 }

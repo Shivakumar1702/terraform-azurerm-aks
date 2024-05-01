@@ -63,8 +63,8 @@ variable "enable_auto_scaling" {
 
 variable "default_node_pool_name" {
   type    = string
-  default = "The name which should be used for the Kubernetes Default/Master Node Pool."
-
+  default = "defltnodepl"
+  description = "The name which should be used for the Kubernetes Default/Master Node Pool."
 }
 
 variable "default_node_count" {
